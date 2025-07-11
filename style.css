@@ -141,6 +141,7 @@ body, h1, h2, h3 {
 .todo-app {
   background-color: rgb(50, 49, 91);
   flex: 1;
+  min-width: 300px; /* Add this line */
   font-family: "Inter", sans-serif;
   color: white;
   display: flex;
@@ -230,34 +231,38 @@ body, h1, h2, h3 {
   margin-bottom: 15px;
 }
 
-.tastatura-div{
-  width: calc(100% - 1rem);
-  margin-left: 5px;
+.tastatura-div {
+  width: 100%;
+  height: 70%;
+  margin: 0;
 }
 
 .grid-keys {
   display: grid;
-  grid-template-columns: repeat(4, 50px);
-  grid-template-rows: repeat(5, 50px);
-  gap: 45px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: min(25px, 5vw);
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4/5; /* Maintains proportions */
 }
 
-.key{
+.key {
   background-color: rgb(206, 239, 255);
-  padding: 2.2rem;
+  padding: 0.2rem; /* Remove fixed padding */
   border-radius: 7px;
   border: 2px solid rgb(47, 76, 91);
   margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 7px 7px rgb(71, 143, 185);
-
+  box-shadow: 5px 5px rgb(71, 143, 185);
   font-family: "Inter", sans-serif;
-  font-size: 26px;
+  font-size: clamp(18px, 4.5vw, 28px); /* Slightly bigger font */
   font-weight: 700;
   color: rgb(98, 33, 2);
   cursor: pointer;
+  min-height: 50px; /* Bigger minimum size */
 }
 
 .equation{
@@ -283,3 +288,4 @@ body, h1, h2, h3 {
   align-items: flex-end;
   justify-content: center;
 }
+
